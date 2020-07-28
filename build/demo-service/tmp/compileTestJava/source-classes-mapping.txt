@@ -1,8 +1,0 @@
-app/TestModule.java
- app.TestModule
-app/DemoTest.java
- app.DemoTest
-app/ConfigTest.java
- app.ConfigTest
-app/IntegrationTest.java
- app.IntegrationTest
