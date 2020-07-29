@@ -36,6 +36,17 @@ configure(subprojects.findAll { it.name.endsWith('-db-migration') }) {
     }
 }
 
+configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+    }
+    tasks.register('mongoMigrate') {
+        dependsOn run
+    }
+}
+
 configure(subprojects.findAll { it.name.matches('.*-service-interface') }) {
     dependencies {
         implementation "core.framework:core-ng-api:${coreNGVersion}"
@@ -53,8 +64,8 @@ configure(project(':demo-service')) {
 project(':demo-service') {
     dependencies {
         implementation project(':demo-service-interface')
-//        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
-//        testImplementation "core.framework:core-ng-mongo-test:${coreNGVersion}"
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+        testImplementation "core.framework:core-ng-mongo-test:${coreNGVersion}"
         runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
         testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
     }

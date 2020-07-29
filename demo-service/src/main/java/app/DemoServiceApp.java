@@ -13,5 +13,6 @@ public class DemoServiceApp extends App {
         http().httpPort(8080);
         load(new DemoModule());
         load(new CustomerModule());
+        load(new ProductModule());
     }
 }
