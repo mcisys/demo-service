@@ -5,7 +5,7 @@ import core.framework.inject.Inject;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author dev
+ * @author jack.lian
  */
 public class DemoTest extends IntegrationTest {
 

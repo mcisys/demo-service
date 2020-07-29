@@ -5,7 +5,7 @@ import app.demo.Painter;
 import core.framework.module.Module;
 
 /**
- * @author dev
+ * @author jack.lian
  */
 public class DemoModule extends Module {
     @Override

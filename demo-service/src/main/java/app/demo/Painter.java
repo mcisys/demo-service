@@ -5,12 +5,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author dev
+ * @author jack.lian
  */
 public class Painter {
-
     private final Logger logger = LoggerFactory.getLogger(Painter.class);
-
     @Inject
     Brush brush;
 

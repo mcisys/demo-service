@@ -1,7 +1,7 @@
 package app.demo;
 
 /**
- * @author dev
+ * @author jack.lian
  */
 public class Brush {
 

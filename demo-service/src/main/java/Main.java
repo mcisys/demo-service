@@ -1,7 +1,7 @@
 import app.DemoServiceApp;
 
 /**
- * @author neo
+ * @author jack.lian
  */
 public class Main {
     public static void main(String[] args) {
