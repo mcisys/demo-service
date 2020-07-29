@@ -1,4 +1,4 @@
-package app.product.domain;
+package app.demo.product.domain;
 
 import core.framework.mongo.Collection;
 import core.framework.mongo.Field;

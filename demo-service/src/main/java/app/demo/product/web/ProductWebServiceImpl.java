@@ -1,4 +1,4 @@
-package app.product.web;
+package app.demo.product.web;
 
 import app.demo.api.ProductWebService;
 import app.demo.api.product.CreateProductRequest;
@@ -6,7 +6,7 @@ import app.demo.api.product.ProductView;
 import app.demo.api.product.SearchProductRequest;
 import app.demo.api.product.SearchProductResponse;
 import app.demo.api.product.UpdateProductRequest;
-import app.product.service.ProductService;
+import app.demo.product.service.ProductService;
 import core.framework.inject.Inject;
 
 /**

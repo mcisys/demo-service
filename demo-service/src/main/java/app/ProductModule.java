@@ -1,9 +1,9 @@
 package app;
 
 import app.demo.api.ProductWebService;
-import app.product.domain.Product;
-import app.product.service.ProductService;
-import app.product.web.ProductWebServiceImpl;
+import app.demo.product.domain.Product;
+import app.demo.product.service.ProductService;
+import app.demo.product.web.ProductWebServiceImpl;
 import core.framework.module.Module;
 import core.framework.mongo.module.MongoConfig;
 

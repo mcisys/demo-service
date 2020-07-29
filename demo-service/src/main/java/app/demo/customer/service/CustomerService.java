@@ -1,7 +1,7 @@
-package app.customer.service;
+package app.demo.customer.service;
 
-import app.customer.domain.Customer;
-import app.customer.domain.CustomerStatus;
+import app.demo.customer.domain.Customer;
+import app.demo.customer.domain.CustomerStatus;
 import app.demo.api.customer.CreateCustomerRequest;
 import app.demo.api.customer.CustomerView;
 import app.demo.api.customer.SearchCustomerRequest;

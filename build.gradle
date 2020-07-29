@@ -53,7 +53,8 @@ configure(subprojects.findAll { it.name.matches('.*-service-interface') }) {
     }
 }
 
-configure(project(':demo-service')) {
+configure([project(':demo-service'),
+           project(':demo-back-office-service')]) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         implementation "core.framework:core-ng:${coreNGVersion}"
@@ -65,7 +66,15 @@ project(':demo-service') {
     dependencies {
         implementation project(':demo-service-interface')
         implementation "core.framework:core-ng-mongo:${coreNGVersion}"
-        testImplementation "core.framework:core-ng-mongo-test:${coreNGVersion}"
+//        testImplementation "core.framework:core-ng-mongo-test:${coreNGVersion}"
+        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
+        testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
+    }
+}
+
+project(':demo-back-office-service') {
+    dependencies {
+        implementation project(':demo-back-office-service-interface')
         runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
         testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
     }

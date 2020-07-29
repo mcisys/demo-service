@@ -1,4 +1,4 @@
-package app.customer.domain;
+package app.demo.bo.customer.domain;
 
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
@@ -6,21 +6,14 @@ import core.framework.db.Column;
 import core.framework.db.PrimaryKey;
 import core.framework.db.Table;
 
-import javax.print.attribute.standard.MediaSize;
-import java.time.ZonedDateTime;
-
 /**
  * @author jack.lian
  */
 @Table(name = "customers")
-public class Customer {
+public class BOCustomer {
     @PrimaryKey(autoIncrement = true)
     @Column(name = "id")
     public Long id;
-
-    @NotNull
-    @Column(name = "status")
-    public CustomerStatus status;
 
     @NotNull
     @NotBlank
@@ -36,12 +29,4 @@ public class Customer {
     @NotBlank
     @Column(name = "last_name")
     public String lastName;
-
-    @NotNull
-    @Column(name = "create_time")
-    public ZonedDateTime createTime;
-
-    @NotNull
-    @Column(name = "updated_time")
-    public ZonedDateTime updatedTime;
 }

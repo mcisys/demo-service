@@ -1,4 +1,6 @@
 include 'demo-service',
         'demo-service-db-migration',
         'demo-service-interface',
-        'demo-mongo-migration'
+        'demo-mongo-migration',
+        'demo-back-office-service',
+        'demo-back-office-service-interface'

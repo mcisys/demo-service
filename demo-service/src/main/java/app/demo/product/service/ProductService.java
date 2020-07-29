@@ -1,11 +1,11 @@
-package app.product.service;
+package app.demo.product.service;
 
 import app.demo.api.product.CreateProductRequest;
 import app.demo.api.product.ProductView;
 import app.demo.api.product.SearchProductRequest;
 import app.demo.api.product.SearchProductResponse;
 import app.demo.api.product.UpdateProductRequest;
-import app.product.domain.Product;
+import app.demo.product.domain.Product;
 import com.mongodb.ReadPreference;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;

@@ -1,6 +1,6 @@
-package app.customer.web;
+package app.demo.customer.web;
 
-import app.customer.service.CustomerService;
+import app.demo.customer.service.CustomerService;
 import app.demo.api.CustomerWebService;
 import app.demo.api.customer.CreateCustomerRequest;
 import app.demo.api.customer.CustomerView;

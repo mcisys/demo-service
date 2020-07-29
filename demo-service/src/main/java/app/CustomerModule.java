@@ -1,8 +1,8 @@
 package app;
 
-import app.customer.domain.Customer;
-import app.customer.service.CustomerService;
-import app.customer.web.CustomerWebServiceImpl;
+import app.demo.customer.domain.Customer;
+import app.demo.customer.service.CustomerService;
+import app.demo.customer.web.CustomerWebServiceImpl;
 import app.demo.api.CustomerWebService;
 import core.framework.module.Module;
 
