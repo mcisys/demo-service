@@ -14,5 +14,6 @@ public class DemoServiceApp extends App {
         load(new DemoModule());
         load(new CustomerModule());
         load(new ProductModule());
+        load(new JobModule());
     }
 }
