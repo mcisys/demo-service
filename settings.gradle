@@ -3,4 +3,5 @@ include 'demo-service',
         'demo-service-interface',
         'demo-mongo-migration',
         'demo-back-office-service',
-        'demo-back-office-service-interface'
+        'demo-back-office-service-interface',
+        'demo-site'

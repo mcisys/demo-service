@@ -6,6 +6,8 @@ import core.framework.db.Column;
 import core.framework.db.PrimaryKey;
 import core.framework.db.Table;
 
+import java.time.ZonedDateTime;
+
 /**
  * @author jack.lian
  */
@@ -29,4 +31,12 @@ public class BOCustomer {
     @NotBlank
     @Column(name = "last_name")
     public String lastName;
+
+    @NotNull
+    @Column(name = "create_time")
+    public ZonedDateTime createTime;
+
+    @NotNull
+    @Column(name = "updated_time")
+    public ZonedDateTime updatedTime;
 }
