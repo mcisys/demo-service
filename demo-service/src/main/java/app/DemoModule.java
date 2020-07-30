@@ -19,6 +19,6 @@ public class DemoModule extends Module {
         painter.draw();
 
         Executor executor = executor().add("jack", 2);
-        executor.submit("jack-test", () -> System.out.println("executor running..."), Duration.ofSeconds(10));
+        executor.submit("jack-test", () -> System.out.println("executor running..."), Duration.ofSeconds(1000));
     }
 }

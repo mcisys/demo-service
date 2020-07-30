@@ -12,5 +12,6 @@ public class DemoBOServiceApp extends App {
         load(new SystemModule("sys.properties"));
         http().httpPort(8081);
         load(new CustomerModule());
+        load(new ProductModule());
     }
 }
