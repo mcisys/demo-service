@@ -1,12 +1,12 @@
 package app.demo.customer.service;
 
-import app.demo.customer.domain.Customer;
-import app.demo.customer.domain.CustomerStatus;
 import app.demo.api.customer.CreateCustomerRequest;
 import app.demo.api.customer.CustomerView;
 import app.demo.api.customer.SearchCustomerRequest;
 import app.demo.api.customer.SearchCustomerResponse;
 import app.demo.api.customer.UpdateCustomerRequest;
+import app.demo.customer.domain.Customer;
+import app.demo.customer.domain.CustomerStatus;
 import core.framework.db.Query;
 import core.framework.db.Repository;
 import core.framework.inject.Inject;
@@ -52,9 +52,7 @@ public class CustomerService {
         Customer customer = customerRepository.get(id).orElseThrow(() -> new NotFoundException("customer not found, id=" + id));
         customer.updatedTime = ZonedDateTime.now();
         customer.firstName = request.firstName;
-        if (request.lastName != null) {
-            customer.lastName = request.lastName;
-        }
+        customer.lastName = request.lastName;
         customerRepository.partialUpdate(customer);
     }
 

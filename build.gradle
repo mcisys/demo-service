@@ -63,28 +63,38 @@ configure([project(':demo-service'),
     }
 }
 
+
+//service use mysql
+configure([project(':demo-service'),
+           project(':demo-back-office-service')]) {
+    dependencies {
+        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
+        testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
+    }
+}
+
+//service use mongo
+configure([project(':demo-service')]) {
+    dependencies {
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+//        testImplementation "core.framework:core-ng-mongo-test:${coreNGVersion}"
+    }
+}
+
 project(':demo-service') {
     dependencies {
         implementation project(':demo-service-interface')
-        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
-//        testImplementation "core.framework:core-ng-mongo-test:${coreNGVersion}"
-        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
-        testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
     }
 }
 
 project(':demo-site') {
     dependencies {
         implementation project(':demo-back-office-service-interface')
-        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
-        testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
     }
 }
 
 project(':demo-back-office-service') {
     dependencies {
         implementation project(':demo-back-office-service-interface')
-        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
-        testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
     }
 }

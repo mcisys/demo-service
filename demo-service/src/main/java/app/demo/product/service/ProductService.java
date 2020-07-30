@@ -35,7 +35,9 @@ public class ProductService {
         productView.name = product.name;
         productView.description = product.description;
         productView.createTime = product.createTime;
+        productView.createdBy = product.createdBy;
         productView.updatedTime = product.updatedTime;
+        productView.updatedBy = product.updatedBy;
         return productView;
     }
 
@@ -45,7 +47,9 @@ public class ProductService {
         product.name = request.name;
         product.description = request.description;
         product.createTime = ZonedDateTime.now();
+        product.createdBy = request.operator;
         product.updatedTime = product.createTime;
+        product.updatedBy = request.operator;
         collection.insert(product);
     }
 
@@ -72,7 +76,10 @@ public class ProductService {
 
     public void update(String id, UpdateProductRequest request) {
         Bson filter = Filters.eq("_id", id);
-        Bson update = Updates.combine(Updates.set("name", request.name), Updates.set("desc", request.description));
+        Bson update = Updates.combine(Updates.set("name", request.name),
+            Updates.set("desc", request.description),
+            Updates.set("updated_time", ZonedDateTime.now()),
+            Updates.set("updated_by", request.operator));
         collection.update(filter, update);
     }
 
@@ -82,7 +89,9 @@ public class ProductService {
         productView.name = product.name;
         productView.description = product.description;
         productView.createTime = product.createTime;
+        productView.createdBy = product.createdBy;
         productView.updatedTime = product.updatedTime;
+        productView.updatedBy = product.updatedBy;
         return productView;
     }
 }

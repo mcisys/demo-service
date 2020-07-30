@@ -10,7 +10,7 @@ import core.framework.module.Module;
 public class ProductModule extends Module {
     @Override
     protected void initialize() {
-        kafka().uri("localhost:9092");
+        kafka().uri(requiredProperty("sys.kafka.url"));
 
         kafka().subscribe("product-updated", ProductUpdateMessage.class, bind(ProductUpdateMessageHandler.class));
         kafka().poolSize(2);

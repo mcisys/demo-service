@@ -4,4 +4,5 @@ include 'demo-service',
         'demo-mongo-migration',
         'demo-back-office-service',
         'demo-back-office-service-interface',
-        'demo-site'
+        'demo-site',
+        'back-office-db-migration'

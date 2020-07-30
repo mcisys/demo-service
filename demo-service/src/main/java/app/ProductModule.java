@@ -19,7 +19,7 @@ public class ProductModule extends Module {
     @Override
     protected void initialize() {
         MongoConfig mongo = config(MongoConfig.class);
-        mongo.uri("mongodb://localhost:27017/test");
+        mongo.uri(requiredProperty("sys.mongo.uri"));
         mongo.collection(Product.class);
 
         bind(ProductService.class);
@@ -29,7 +29,7 @@ public class ProductModule extends Module {
     }
 
     private void configureKafka() {
-        kafka().uri("localhost:9092");
+        kafka().uri(requiredProperty("sys.kafka.url"));
 
         kafka().subscribe("product-updated", ProductUpdateMessage.class, bind(ProductUpdateMessageHandler.class));
         kafka().poolSize(2);

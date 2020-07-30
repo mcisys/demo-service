@@ -25,9 +25,7 @@ public class BOCustomerService {
         BOCustomer customer = repository.get(id).orElseThrow(() -> new NotFoundException("customer not found, id=" + id));
         customer.updatedTime = ZonedDateTime.now();
         customer.firstName = request.firstName;
-        if (request.lastName != null) {
-            customer.lastName = request.lastName;
-        }
+        customer.lastName = request.lastName;
         repository.partialUpdate(customer);
     }
 

@@ -17,4 +17,9 @@ public class CreateProductRequest {
     @NotBlank
     @Property(name = "desc")
     public String description;
+
+    @NotNull
+    @NotBlank
+    @Property(name = "operator")
+    public String operator;
 }
