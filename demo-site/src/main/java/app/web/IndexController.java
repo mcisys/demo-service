@@ -21,6 +21,6 @@ public class IndexController {
     }
 
     public Response getCustomer(Request request) {
-        return Response.bean(boCustomerWebService.get(Long.parseLong(request.pathParam("id"))));
+        return Response.bean(boCustomerWebService.get(Long.valueOf(request.pathParam("id"))));
     }
 }

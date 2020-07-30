@@ -32,11 +32,11 @@ public class BOCustomerService {
     }
 
     private BOCustomerView view(BOCustomer boCustomer) {
-        BOCustomerView BOCustomerView = new BOCustomerView();
-        BOCustomerView.id = boCustomer.id;
-        BOCustomerView.email = boCustomer.email;
-        BOCustomerView.firstName = boCustomer.firstName;
-        BOCustomerView.lastName = boCustomer.lastName;
-        return BOCustomerView;
+        BOCustomerView boCustomerView = new BOCustomerView();
+        boCustomerView.id = boCustomer.id;
+        boCustomerView.email = boCustomer.email;
+        boCustomerView.firstName = boCustomer.firstName;
+        boCustomerView.lastName = boCustomer.lastName;
+        return boCustomerView;
     }
 }

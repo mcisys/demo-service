@@ -11,6 +11,6 @@ public class Main {
         migration.migrate(mongo -> mongo.runCommand(new Document().append("setParameter", 1).append("notablescan", 1)));
 
         migration = new MongoMigration("sys.properties");
-        migration.migrate((mongo) -> mongo.createIndex("products", Indexes.ascending("name")));
+        migration.migrate(mongo -> mongo.createIndex("products", Indexes.ascending("name")));
     }
 }
