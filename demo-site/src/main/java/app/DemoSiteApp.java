@@ -1,4 +1,4 @@
-package app.web;
+package app;
 
 import core.framework.module.App;
 
@@ -8,6 +8,7 @@ import core.framework.module.App;
 public class DemoSiteApp extends App {
     @Override
     protected void initialize() {
+        http().httpPort(8082);
         load(new DemoWebModule());
     }
 }

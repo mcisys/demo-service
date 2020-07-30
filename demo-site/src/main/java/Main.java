@@ -1,6 +1,4 @@
-package java.app;
-
-import app.web.DemoSiteApp;
+import app.DemoSiteApp;
 
 /**
  * @author jack.lian
