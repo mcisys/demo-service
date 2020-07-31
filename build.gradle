@@ -47,15 +47,19 @@ configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
     }
 }
 
-configure(subprojects.findAll { it.name.matches('.*-service-interface') }) {
+configure(subprojects.findAll { it.name.matches('.*-interface') }) {
     dependencies {
         implementation "core.framework:core-ng-api:${coreNGVersion}"
     }
 }
 
 configure([project(':demo-service'),
-           project(':demo-back-office-service'),
-           project(':demo-site')]) {
+           project(':back-office'),
+           project(':demo-site'),
+           project(':customer-service'),
+           project(':product-service'),
+           project(':scheduler'),
+           project(':website')]) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         implementation "core.framework:core-ng:${coreNGVersion}"
@@ -66,7 +70,7 @@ configure([project(':demo-service'),
 
 //service use mysql
 configure([project(':demo-service'),
-           project(':demo-back-office-service')]) {
+           project(':customer-service')]) {
     dependencies {
         runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
         testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
@@ -74,10 +78,23 @@ configure([project(':demo-service'),
 }
 
 //service use mongo
-configure([project(':demo-service')]) {
+configure([project(':demo-service'),
+           project(':product-service')]) {
     dependencies {
         implementation "core.framework:core-ng-mongo:${coreNGVersion}"
 //        testImplementation "core.framework:core-ng-mongo-test:${coreNGVersion}"
+    }
+}
+
+project(':customer-service') {
+    dependencies {
+        implementation project(':customer-service-interface')
+    }
+}
+
+project(':product-service') {
+    dependencies {
+        implementation project(':product-service-interface')
     }
 }
 
@@ -87,14 +104,16 @@ project(':demo-service') {
     }
 }
 
-project(':demo-site') {
+project(':website') {
     dependencies {
-        implementation project(':demo-back-office-service-interface')
+        implementation project(':website-interface')
+        implementation project(':customer-service-interface')
     }
 }
 
-project(':demo-back-office-service') {
+project(':back-office') {
     dependencies {
-        implementation project(':demo-back-office-service-interface')
+        implementation project(':back-office-interface')
+        implementation project(':customer-service-interface')
     }
 }
